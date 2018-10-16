@@ -1,5 +1,4 @@
-from sqlalchemy import Column
-from sqlalchemy.types import Date, Integer, String
+from sqlalchemy import Column, Integer, String, Date
 
 from gtfsjpdb.models.base import Base
 
