@@ -8,7 +8,7 @@ class Agency(Base):
     filename = 'agency.txt'
     __tablename__ = 'agency'
 
-    id = Column(String(255), primary_key=True)
+    id = Column(String(255), primary_key=True, nullable=False)
     name = Column(String(255), nullable=False)
     url = Column(String(255), nullable=False)
     timezone = Column(String(31), nullable=False)
