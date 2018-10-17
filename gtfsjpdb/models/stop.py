@@ -23,6 +23,7 @@ class Stop(Base):
     zone = relationship("Zone", back_populates="stops")
     url = Column(String(255))
     location_type = Column(Integer)
-    parent_station = Column(String(255))
+    parent_station_id = Column(String(255), ForeignKey('stop.id'))
+    parent_station = relationship("Stop", back_populates="parent_stops")
     timezone = Column(String(31))
     wheelchair_boarding = Column(Integer)
