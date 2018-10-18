@@ -6,6 +6,7 @@ from gtfsjpdb.models.base import Base
 
 
 class Zone(Base):
+    filename = 'stops.txt'
     __tablename__ = 'zone'
     id = Column(String(255), primary_key=True, nullable=False)
     stops = relationship("Stop", back_populates="zone")
