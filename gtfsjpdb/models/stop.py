@@ -28,3 +28,5 @@ class Stop(Base):
     parent_station = relationship("Stop", back_populates="parent_stops")
     timezone = Column(String(31))
     wheelchair_boarding = Column(Integer)
+
+    stop_times = relationship('StopTime', back_populates='stop')
