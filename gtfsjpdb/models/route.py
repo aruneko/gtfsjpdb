@@ -27,7 +27,7 @@ class RouteJP(Base):
     __tablename__ = 'route_jp'
 
     id = Column(Integer, primary_key=True)
-    route_id = Column(String(255))
+    route_id = Column(String(255), ForeignKey("route.id"))
     route = relationship('Route', back_populates='route_jp')
     update_date = Column(Date)
     origin_stop = Column(String(255))
