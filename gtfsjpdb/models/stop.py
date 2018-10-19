@@ -33,4 +33,6 @@ class Stop(Base):
     timezone = Column(String(31))
     wheelchair_boarding = Column(Integer)
 
-    stop_times = relationship('StopTime', back_populates='stop')
+    stop_time = relationship('StopTime', back_populates='stop')
+    from_stop = relationship('Transfer', back_populates='from_stop')
+    to_stop = relationship('Transfer', back_populates='to_stop')
