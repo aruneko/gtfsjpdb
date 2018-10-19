@@ -9,7 +9,11 @@ class Zone(Base):
     filename = 'stops.txt'
     __tablename__ = 'zone'
     id = Column(String(255), primary_key=True, nullable=False)
+
     stops = relationship("Stop", back_populates="zone")
+    origin = relationship('FareRule', back_populates='origin_zone')
+    destination = relationship('FareRule', back_populates='destination_zones')
+    contains = relationship('FareRule', back_populates='contains_zones')
 
 
 class Stop(Base):
