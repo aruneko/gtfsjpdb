@@ -17,7 +17,7 @@ class Agency(Base):
     fare_url = Column(String(255))
     email = Column(String(255))
     agency_jp = relationship("AgencyJP", uselist=False, back_populates="agency")
-    route = relationship("Route", back_populates="agency")
+    routes = relationship("Route", back_populates="agency")
 
 
 class AgencyJP(Base):

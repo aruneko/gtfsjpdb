@@ -11,9 +11,9 @@ class Zone(Base):
     id = Column(String(255), primary_key=True, nullable=False)
 
     stops = relationship("Stop", back_populates="zone")
-    origin = relationship('FareRule', back_populates='origin_zone')
-    destination = relationship('FareRule', back_populates='destination_zones')
-    contains = relationship('FareRule', back_populates='contains_zones')
+    origin_fare_rules = relationship('FareRule', back_populates='origin')
+    destination_fare_rules = relationship('FareRule', back_populates='destination')
+    contains_fare_rules = relationship('FareRule', back_populates='contains')
 
 
 class Stop(Base):
@@ -33,6 +33,6 @@ class Stop(Base):
     timezone = Column(String(31))
     wheelchair_boarding = Column(Integer)
 
-    stop_time = relationship('StopTime', back_populates='stop')
-    from_stop = relationship('Transfer', back_populates='from_stop')
-    to_stop = relationship('Transfer', back_populates='to_stop')
+    stop_times = relationship('StopTime', back_populates='stop')
+    from_transfers = relationship('Transfer', back_populates='to_stop')
+    to_transfers = relationship('Transfer', back_populates='from_stop')

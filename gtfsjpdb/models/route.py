@@ -20,6 +20,8 @@ class Route(Base):
     text_color = Column(String(7))
     parent_route_id = Column(String(255))
     route_jp = relationship("RouteJP", uselist=False, back_populates="route")
+    trips = relationship("Trip", back_populates="route")
+    fare_rules = relationship("FareRule", back_populates="")
 
 
 class RouteJP(Base):

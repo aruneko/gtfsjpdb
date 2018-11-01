@@ -12,4 +12,4 @@ class Shape(Base):
     id = Column(String(255), primary_key=True, nullable=False)
     line = Column(Geometry("LINESTRING"), nullable=False)
 
-    trips = relationship("Trip", back_populates="shape")
+    trip = relationship("Trip", back_populates="shapes")

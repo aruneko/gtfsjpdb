@@ -13,4 +13,4 @@ class Office(Base):
     url = Column(String(255))
     phone = Column(String(15))
 
-    trips = relationship("Trip", back_populates="shape")
+    trip = relationship("Trip", back_populates="offices")

@@ -29,6 +29,6 @@ class CalendarDate(Base):
 
     id = Column(Integer, primary_key=True)
     service_id = Column(String(255), ForeignKey("calendar.id"), nullable=False)
-    service = relationship('Calendar', back_populates='calendar_dates')
+    calendar = relationship('Calendar', back_populates='calendar_dates')
     date = Column(Date, nullable=False)
     exception_type = Column(Integer, nullable=False)

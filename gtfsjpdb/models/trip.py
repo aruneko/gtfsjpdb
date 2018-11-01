@@ -27,3 +27,4 @@ class Trip(Base):
     offices = relationship('Office', back_populates='trip')
 
     stop_times = relationship('StopTime', back_populates='trip')
+    frequencies = relationship('Frequency', back_populates='trip')

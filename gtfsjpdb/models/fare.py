@@ -15,7 +15,7 @@ class FareAttribute(Base):
     transfers = Column(Integer)
     transfer_duration = Column(Integer)
 
-    fare_rule = relationship('FareRule', back_populates='fare_attribute')
+    fare_rules = relationship('FareRule', back_populates='fare_attribute')
 
 
 class FareRule(Base):
@@ -24,12 +24,12 @@ class FareRule(Base):
 
     id = Column(Integer, primary_key=True)
     fare_id = Column(String(255), ForeignKey("fare_attribute.id"), nullable=False)
-    fares = relationship('FareAttribute', back_populates='fare_attributes')
+    fare_attribute = relationship('FareAttribute', back_populates='fare_rules')
     route_id = Column(String(255), ForeignKey("route.id"), nullable=False)
-    routes = relationship('Route', back_populates='fare_attributes')
+    route = relationship('Route', back_populates='fare_rules')
     origin_id = Column(String(255), ForeignKey("zone.id"), nullable=False)
-    origin = relationship('Zone', back_populates='origin_zones')
+    origin = relationship('Zone', back_populates='origin_fare_rules')
     destination_id = Column(String(255), ForeignKey("zone.id"), nullable=False)
-    destination = relationship('Zone', back_populates='destination_zones')
+    destination = relationship('Zone', back_populates='destination_fare_rules')
     contains_id = Column(String(255), ForeignKey("zone.id"), nullable=False)
-    contains = relationship('Zone', back_populates='contains_zones')
+    contains = relationship('Zone', back_populates='contains_fare_rules')
