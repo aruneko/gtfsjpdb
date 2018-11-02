@@ -5,8 +5,8 @@ from gtfsjpdb.models.base import Base
 
 
 class Office(Base):
-    filename = 'office_jp.txt'
-    __tablename__ = 'office'
+    filename = "office_jp.txt"
+    __tablename__ = "office"
 
     id = Column(String(255), primary_key=True, nullable=False)
     name = Column(String(255), nullable=False)

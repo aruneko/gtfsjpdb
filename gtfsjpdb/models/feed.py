@@ -4,8 +4,8 @@ from gtfsjpdb.models.base import Base
 
 
 class Feed(Base):
-    filename = 'feed_info.txt'
-    __tablename__ = 'feeds'
+    filename = "feed_info.txt"
+    __tablename__ = "feeds"
 
     id = Column(Integer, primary_key=True)
     publisher_name = Column(String(255), nullable=False)

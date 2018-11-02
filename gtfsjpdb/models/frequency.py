@@ -10,7 +10,7 @@ class Frequency(Base):
 
     id = Column(Integer, primary_key=True)
     trip_id = Column(String(255), ForeignKey("trip.id"), nullable=False)
-    trip = relationship('Trip', back_populates='frequencies')
+    trip = relationship("Trip", back_populates="frequencies")
     start_time = Column(Time, nullable=False)
     end_time = Column(Time, nullable=False)
     headway_secs = Column(Integer, nullable=False)

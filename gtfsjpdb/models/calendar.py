@@ -5,8 +5,8 @@ from gtfsjpdb.models.base import Base
 
 
 class Calendar(Base):
-    filename = 'calendar.txt'
-    __tablename__ = 'calendar'
+    filename = "calendar.txt"
+    __tablename__ = "calendar"
 
     id = Column(String(255), primary_key=True, nullable=False)
     monday = Column(Boolean, nullable=False)
@@ -24,11 +24,11 @@ class Calendar(Base):
 
 
 class CalendarDate(Base):
-    filename = 'calendar_dates.txt'
-    __tablename__ = 'calendar_date'
+    filename = "calendar_dates.txt"
+    __tablename__ = "calendar_date"
 
     id = Column(Integer, primary_key=True)
     service_id = Column(String(255), ForeignKey("calendar.id"), nullable=False)
-    calendar = relationship('Calendar', back_populates='calendar_dates')
+    calendar = relationship("Calendar", back_populates="calendar_dates")
     date = Column(Date, nullable=False)
     exception_type = Column(Integer, nullable=False)

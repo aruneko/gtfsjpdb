@@ -7,7 +7,7 @@ from gtfsjpdb.models.base import Base
 
 class Shape(Base):
     filename = "shapes.txt"
-    __tablename__ = 'shape'
+    __tablename__ = "shape"
 
     id = Column(String(255), primary_key=True, nullable=False)
     line = Column(Geometry("LINESTRING"), nullable=False)

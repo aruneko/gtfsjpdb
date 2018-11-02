@@ -5,8 +5,8 @@ from gtfsjpdb.models.base import Base
 
 
 class Agency(Base):
-    filename = 'agency.txt'
-    __tablename__ = 'agency'
+    filename = "agency.txt"
+    __tablename__ = "agency"
 
     id = Column(String(255), primary_key=True, nullable=False)
     name = Column(String(255), nullable=False)
@@ -21,11 +21,11 @@ class Agency(Base):
 
 
 class AgencyJP(Base):
-    filename = 'agency_jp.txt'
-    __tablename__ = 'agency_jp'
+    filename = "agency_jp.txt"
+    __tablename__ = "agency_jp"
 
     id = Column(Integer, primary_key=True)
-    agency_id = Column(String(255), ForeignKey('agency.id'))
+    agency_id = Column(String(255), ForeignKey("agency.id"))
     agency = relationship("Agency", back_populates="agency_jp")
     official_name = Column(String(255))
     zip_number = Column(String(255))
